@@ -1,0 +1,122 @@
+#body {
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top:40px;
+}
+.top{
+	width: 100%;
+	height: 40px;
+	display: flex;
+	background-color:deepskyblue ;
+}
+.top ul{
+	width: 100%;
+}
+.top li{
+	float: left;
+	margin-left: 2%;
+	line-height: 40px;
+}
+.top li a{
+	color: white;
+	font-size: 20px;
+}
+#body{
+	width: 100%;
+	height: 100%;
+}
+.loop{
+	width: 100%;
+	position: relative;
+}
+.loop ul:nth-child(1){
+	width: 500%;
+	overflow: hidden;
+	transition: all linear 0.5s;
+}
+.loop ul:nth-child(1) li{
+	width: 20%;
+	float: left;
+	position: relative;
+}
+.loop ul:nth-child(1) li img{
+	width: 100%;
+	height: 200px;
+}
+.loop ul:nth-child(1) li p{
+	position: absolute;
+	bottom: 10px;
+	left: 2%;
+}
+.loop ul:nth-child(2){
+	width: 30%;
+	margin-right: 0;
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+}
+.loop ul:nth-child(2) li{
+	float: left;
+	width: 15px;
+	height: 15px;
+	border-radius: 50% ;
+	background-color: #ccc;
+	margin-left: 2%;
+	
+}
+.introduce{
+	margin-top:15px;
+	width: 100%;
+	height: 210px;
+}
+.introduce img{
+	width:30%;
+	height:190px;
+	float:left;
+}
+h3{
+	display:block;
+}
+.introduce{
+	font-size:12px;
+}
+.bottom{
+	width: 100%;
+	height: 40px;
+}
+.bottom ul{
+	width: 150px;
+	height: 40px;
+	margin: 0 auto;
+}
+.bottom ul li{
+	float: left;
+	line-height: 30px;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	margin-left: 10px;
+	border: 1px solid #00BFFF;
+}
+.bottom ul li:hover{
+	background: #00BFFF;
+}
+.active{
+	background: #00BFFF;
+}
+.bottom ul li:nth-child(1){
+	margin-left: 0;
+}
+.introduce_1{
+	display: none;
+}
+.introduce_2{
+	display: none;
+}
+.introduce_3{
+	display: none;
+}

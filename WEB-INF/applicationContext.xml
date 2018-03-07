@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/dmtj">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="ljx5201314"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+			  <value>com/dmtj/bean/User.hbm.xml</value>
+			  <value>com/dmtj/bean/Message.hbm.xml</value>
+			</list>
+		</property></bean>
+		
+		<bean id="userAction" class="com.dmtj.action.UserAction">
+			<property name="userService" ref="userService"></property>
+		</bean>
+		    
+		<bean id="userService" class="com.dmtj.service.UserServiceImpl">
+			<property name="userDao" ref="userDao"></property>
+		</bean>
+			
+		<bean id="userDao" class="com.dmtj.dao.UserDaoImpl">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		
+		<bean id="velidaAction" class="com.dmtj.action.VeridaAction"></bean>
+		
+		<bean id="messageAction" class="com.dmtj.action.MessageAction">
+			<property name="messageService" ref="messageService"></property>
+		</bean>
+		<bean id="messageService" class="com.dmtj.service.MessageServiceImpl">
+			<property name="messageDao" ref="messageDao"></property>
+		</bean>
+		
+		<bean id="messageDao" class="com.dmtj.dao.MessageDaoImpl">
+			<property name="sessionFactory" ref="sessionFactory"></property>
+		</bean>
+		
+		</beans>

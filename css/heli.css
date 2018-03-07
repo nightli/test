@@ -1,0 +1,31 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: ""新宋体"";
+}
+body{
+	background: url('http://www.qqkubao.com/uploadfile/2014/10/3/20141009192033532.jpg');
+}
+#body{
+	width: 400px;
+	height: 350px;
+	background: beige;
+	padding: 20px;
+	border-radius: 20px;
+	position: relative;
+	margin: auto;
+	margin-top: 50px;
+	border: 5px solid blanchedalmond;
+}
+#body_id{
+	font-size: 30px;
+	font-family: "楷体";
+}
+#body>form{
+	margin: 10px;
+}
+form span{
+	margin-bottom: 10px;
+	display: inline-block;
+	font-size: 17px;
+}
